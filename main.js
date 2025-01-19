@@ -75,8 +75,8 @@ const camera = new THREE.PerspectiveCamera(
 );
 let defaultCameraPos = {
   x: 1.009028643133046,
-  y: 0.5463638814987481,
-  z: 0.4983449671971262,
+  y: 1.2463638814987481,
+  z: 2.4983449671971262,
 };
 let defaultCamerRot = {
   x: -0.8313297556598935,
@@ -103,11 +103,11 @@ renderer.shadowMap.type = THREE.PCFSoftShadowMap;
 const controls = new OrbitControls(camera, renderer.domElement);
 // controls.enableDamping = true;
 controls.enablePan = false;
-controls.minDistance = 0.9;
-controls.maxDistance = 1.6;
-controls.minAzimuthAngle = 0.2;
+controls.minDistance = 5;
+controls.maxDistance = 5;
+controls.minAzimuthAngle = 10;
 controls.maxAzimuthAngle = Math.PI * 0.78;
-controls.minPolarAngle = 0.3;
+controls.minPolarAngle = 0.2;
 controls.maxPolarAngle = Math.PI / 2;
 controls.update();
 
@@ -317,7 +317,7 @@ function loadIntroText() {
       new THREE.MeshPhongMaterial({ color: 0x171f27, flatShading: true }),
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
     ];
-    const titleGeo = new TextGeometry('SUSHIL THAPA', {
+    const titleGeo = new TextGeometry(' ', {
       font: font,
       size: 0.08,
       height: 0.01,
@@ -334,7 +334,7 @@ function loadIntroText() {
       new THREE.MeshPhongMaterial({ color: 0xffffff }),
     ];
     const subTitleGeo = new TextGeometry(
-      'Web Designer / Developer / Content Creator',
+      ' ',
       {
         font: font,
         size: 0.018,
